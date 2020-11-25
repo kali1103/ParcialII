@@ -21,6 +21,7 @@ public class ListaEstudiante
     
     /**
      * Método encargado de crear y agregar un nuevo Estudiante.
+     * Verifica que el Estudiante que se ingrese se inserte en orden alfabetico.
      * @param String nombre Contiene el nombre del Estudiante.
      * @param int carnet    Contiene el valor del carnet.
      */
@@ -31,10 +32,47 @@ public class ListaEstudiante
         }
         else{
             Estudiante actual = inicio;
-            while (actual.getSiguiente() != null){
+            int indice = 0;
+            if (alfa.getNombre().length() < actual.getNombre().length()){
+                indice = alfa.getNombre().length();
+                }
+            else if (alfa.getNombre().length() > actual.getNombre().length()){
+                indice = alfa.getNombre().length();
+                }
+            else{
+                indice = actual.getNombre().length();
+                }
+            while (actual != null){
+                for (int contador = 0; contador < indice; indice++){
+                    if (alfa.getNombre().charAt(contador) < actual.getNombre().charAt(contador)){
+                        alfa.setSiguiente(actual);
+                        inicio = alfa;
+                        break;
+                    }
+                    else if (alfa.getNombre().charAt(contador) > actual.getNombre().charAt(contador)){
+                        actual = actual.getSiguiente();
+                        break;
+                    }
+                    else if (actual.getSiguiente() == null){
+                        actual.setSiguiente(alfa);
+                    }
+                }
                 actual = actual.getSiguiente();
             }
-            actual.setSiguiente(alfa);
         }
+    }
+    
+    /**
+     * Retorna una cadena de caracteres con los dato de cada estudiante.
+     * @return String   Contiene los datos de cada estudiante.
+     */
+    public String toString(){
+        String datos = "";
+        Estudiante temporal = inicio;
+        while (temporal != null){
+            datos += temporal.datos() + " ";
+            temporal = temporal.getSiguiente();
+        }
+        return datos;
     }
 }

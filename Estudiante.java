@@ -11,7 +11,7 @@ public class Estudiante
     private String nombre;
     private int carnet;
     private ListaNota notas;
-    private int promedio;
+    private float promedio;
     private Estudiante siguiente;
 
     /**
@@ -50,7 +50,7 @@ public class Estudiante
         }
         while(opcion == 1);
         
-        promedio = 0;
+        promedio = getPromedio();
         siguiente = null;
     }
     
@@ -107,5 +107,13 @@ public class Estudiante
      */
     public Estudiante getSiguiente(){
         return siguiente;
+    }
+    
+    /**
+     * Retorna una cadena de caracteres con los datos del estudiante.
+     * @return String   Contiene los datos del estudiante.
+     */
+    public String datos(){
+        return "{Estudiante: " + nombre + " | Carné: " + carnet + " | Promedio: " + promedio + "}";
     }
 }
