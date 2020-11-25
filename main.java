@@ -14,5 +14,6 @@ public class main{
                 alfa.agregar(nombre, carnet);
             }
         }while(opcion != 2);
+        System.out.println(alfa);
     }
 }

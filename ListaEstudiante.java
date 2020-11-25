@@ -33,31 +33,24 @@ public class ListaEstudiante
         else{
             Estudiante actual = inicio;
             int indice = 0;
-            if (alfa.getNombre().length() < actual.getNombre().length()){
-                indice = alfa.getNombre().length();
-                }
-            else if (alfa.getNombre().length() > actual.getNombre().length()){
+            if (alfa.getNombre().length() <= actual.getNombre().length()){
                 indice = alfa.getNombre().length();
                 }
             else{
                 indice = actual.getNombre().length();
                 }
             while (actual != null){
-                for (int contador = 0; contador < indice; indice++){
+                for (int contador = 0; contador < indice; contador++){
                     if (alfa.getNombre().charAt(contador) < actual.getNombre().charAt(contador)){
                         alfa.setSiguiente(actual);
                         inicio = alfa;
-                        break;
+                        return;
                     }
-                    else if (alfa.getNombre().charAt(contador) > actual.getNombre().charAt(contador)){
+                    else if (alfa.getNombre().charAt(contador) >= actual.getNombre().charAt(contador)){
                         actual = actual.getSiguiente();
                         break;
                     }
-                    else if (actual.getSiguiente() == null){
-                        actual.setSiguiente(alfa);
-                    }
                 }
-                actual = actual.getSiguiente();
             }
         }
     }
