@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Nota
+comment0.text=\r\n\ Contiene\ una\ lista\ enlazada\ con\ las\ notas\ del\ estudiante.\r\n\ \r\n\ @author\ Rodrigo\ Mendoza\ Quesada,\ C04813.\r\n\ @version\ 25-11-2020.\r\n
+comment1.params=
+comment1.target=Nota()
+comment1.text=\r\n\ Constructor\ por\ defecto\ de\ la\ clase.\r\n
+comment2.params=valor
+comment2.target=Nota(int)
+comment2.text=\r\n\ Constructor\ con\ par\u00E1metros\ de\ la\ clase.\r\n\ @param\ int\ valor\ Valor\ de\ la\ constante.\r\n
+comment3.params=
+comment3.target=int\ getValor()
+comment3.text=\r\n\ Retorna\ el\ valor\ de\ la\ Nota.\r\n\ @return\ int\ \ Contiene\ el\ valor\ n\u00FAmerico\ de\ la\ Nota.\r\n
+comment4.params=valor
+comment4.target=void\ setValor(int)
+comment4.text=\r\n\ Permite\ establecer\ el\ valor\ de\ la\ Nota.\r\n\ @param\ int\ valor\ Contiene\ el\ valor\ a\ agregar.\r\n
+comment5.params=siguiente
+comment5.target=void\ setSiguiente(Nota)
+comment5.text=\r\n\ Permite\ establecer\ el\ valor\ de\ la\ siguiente\ Nota.\r\n\ @param\ Nota\ siguiente\ \ \ \ Contiene\ el\ Nota\ que\ ser\u00E1\ asignado.\r\n
+comment6.params=
+comment6.target=Nota\ getSiguiente()
+comment6.text=\r\n\ Retorna\ la\ Nota\ siguiente.\r\n\ @return\ Nota\ siguiente\ \ \ Contiene\ una\ referencia\ hacia\ la\ Nota\ siguiente.\r\n
+numComments=7

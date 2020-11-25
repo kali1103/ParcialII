@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=ListaEstudiante
+comment0.text=\r\n\ Se\ encarga\ del\ manejo\ de\ la\ lista\ de\ Estudiantes.\r\n\ \r\n\ @author\ Rodrigo\ Mendoza\ Quesada,\ C04813.\r\n\ @version\ 25-11-2020.\r\n
+comment1.params=
+comment1.target=ListaEstudiante()
+comment1.text=\r\n\ Constructor\ por\ defecto\ de\ la\ clase.\r\n
+comment2.params=nombre\ carnet
+comment2.target=void\ agregar(java.lang.String,\ int)
+comment2.text=\r\n\ M\u00E9todo\ encargado\ de\ crear\ y\ agregar\ un\ nuevo\ Estudiante.\r\n\ @param\ String\ nombre\ Contiene\ el\ nombre\ del\ Estudiante.\r\n\ @param\ int\ carnet\ \ \ \ Contiene\ el\ valor\ del\ carnet.\r\n
+numComments=3

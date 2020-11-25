@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=ListaNota
+comment0.text=\r\n\ Se\ encarga\ del\ manejo\ de\ la\ lista\ para\ las\ Notas.\r\n\ \r\n\ @author\ Rodrigo\ Mendoza\ Quesada,\ C04813.\r\n\ @version\ 25-11-2020.\r\n
+comment1.params=
+comment1.target=ListaNota()
+comment1.text=\r\n\ Constructor\ por\ defecto\ de\ la\ clase.\r\n
+comment2.params=valor
+comment2.target=void\ agregar(int)
+comment2.text=\r\n\ M\u00E9todo\ encargado\ de\ crear\ y\ agregar\ un\ nuevo\ elemento.\r\n\ @param\ int\ valor\ Valor\ de\ la\ constante.\r\n
+comment3.params=
+comment3.target=float\ calcularPromedio()
+comment3.text=\r\n\ B\u00E1sicamente\ es\ un\ se\u00F1uelo,\ solo\ se\ utiliza\ para\ llamar\ sin\ par\u00E1metros.\r\n
+comment4.params=inicio\ suma
+comment4.target=float\ calcularPromedio(Nota,\ int)
+comment4.text=\r\n\ Permite\ el\ calculo\ del\ promedio\ de\ Notas\ mediante\ un\ m\u00E9todo\ recursivo.\r\n\ @param\ Nota\ inicio\ \ \ Contiene\ el\ primer\ elemento\ de\ la\ lista\ de\ Notas.\r\n\ @param\ int\ suma\ \ Contiene\ el\ valor\ de\ la\ suma\ de\ todas\ las\ Notas.\r\n\ @return\ float\ \ \ \ Contiene\ el\ valor\ del\ promedio.\r\n
+comment5.params=
+comment5.target=int\ getIndice()
+comment5.text=\r\n\ Permite\ obtener\ el\ indice\ de\ la\ lista\ de\ Notas.\r\n\ @return\ int\ dato\ Contiene\ el\ indice\ de\ la\ lista\ de\ Notas.\r\n
+comment6.params=
+comment6.target=Nota\ getInicio()
+comment6.text=\r\n\ Permite\ obtener\ la\ primera\ Nota\ de\ la\ lista.\r\n\ @return\ Nodo\ Contiene\ el\ valor\ de\ inicio\ de\ la\ lista\ de\ Notas.\r\n
+comment7.params=inicio\ lista
+comment7.target=java.lang.String\ dato(Nota,\ java.lang.String)
+comment7.text=\r\n\ Retorna\ de\ forma\ recursiva\ la\ lista\ de\ ecuaciones.\r\n\ @param\ Nodo\ inicio\ \ \ Contiene\ el\ primer\ nodo\ de\ la\ lista\ de\ ecuaciones.\r\n\ @param\ String\ ecuacion\ \ \ Contiene\ una\ lista\ donde\ se\ anotan\ las\ ecuaciones.\r\n
+numComments=8
