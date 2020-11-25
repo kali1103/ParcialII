@@ -46,13 +46,27 @@ public class ListaEstudiante
                         inicio = alfa;
                         return;
                     }
-                    else if (alfa.getNombre().charAt(contador) >= actual.getNombre().charAt(contador)){
+                    else if (alfa.getNombre().charAt(contador) >= actual.getNombre().charAt(contador)
+                             && actual.getSiguiente() != null){
                         actual = actual.getSiguiente();
                         break;
+                    }
+                    else{
+                        actual.setSiguiente(alfa);
+                        actual = null;
+                        return;
                     }
                 }
             }
         }
+    }
+    
+    /**
+     * Retorna el valor del primer elemento de la lista de Estudiantes.
+     * @return Estudiante inicio    Primer elemento de la lista.
+     */
+    public Estudiante getInicio(){
+        return inicio;
     }
     
     /**
@@ -63,7 +77,7 @@ public class ListaEstudiante
         String datos = "";
         Estudiante temporal = inicio;
         while (temporal != null){
-            datos += temporal.datos() + " ";
+            datos += temporal.datos() + "\n";
             temporal = temporal.getSiguiente();
         }
         return datos;

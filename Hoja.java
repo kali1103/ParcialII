@@ -2,13 +2,13 @@
 /**
  * Clase Hoja.
  * 
- * @author Rodrigo Mendoza Quesada.
+ * @author Rodrigo Mendoza Quesada, C04813.
  * @version 24-11-2020.
  */
 public class Hoja
 {
     //Instancia de variables.
-    private int valor;
+    private float valor;
     private Hoja menor;
     private Hoja mayor;
 
@@ -25,9 +25,9 @@ public class Hoja
     
     /**
      * Constructor con parámetros de la clase.
-     * @param int valor Valor de la constante.
+     * @param float valor Valor de la constante.
      */
-    public Hoja(int valor){
+    public Hoja(float valor){
         this.valor = valor;
         menor = null;
         mayor = null;
@@ -35,17 +35,17 @@ public class Hoja
     
     /**
      * Retorna el valor de la Hoja.
-     * @return int  Contiene el valor númerico de la Hoja.
+     * @return float  Contiene el valor númerico de la Hoja.
      */
-    public int getValor(){
+    public float getValor(){
         return this.valor;
     }
     
     /**
      * Permite establecer el valor de la Hoja.
-     * @param int valor Contiene el valor a agregar.
+     * @param float valor Contiene el valor a agregar.
      */
-    public void setValor(int valor){
+    public void setValor(float valor){
         this.valor = valor;
     }
     

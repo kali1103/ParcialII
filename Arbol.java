@@ -1,7 +1,7 @@
  /**
  * Clase Arbol.
  * 
- * @author Rodrigo Mendoza Quesada.
+ * @author Rodrigo Mendoza Quesada, C04813
  * @version 24-11-2020.
  */
 public class Arbol{
@@ -26,18 +26,18 @@ public class Arbol{
     
     /**
      * Básicamente es un señuelo.
-     * @param int valor Contiene el valor que se asigna a la Hoja.
+     * @param float valor Contiene el valor que se asigna a la Hoja.
      */
-    public void agregar(int valor){
+    public void agregar(float valor){
         agregar(valor, raiz);
     }
     
     /**
      * Permite agregar una nueva hoja al árbol.
-     * @param int valor contiene el valor que se asigna a la Hoja.
+     * @param float valor contiene el valor que se asigna a la Hoja.
      * @param Hoja raiz Contiene el valor desde el cual se empieza a recorrer el árbol.
      */
-    public boolean agregar(int valor, Hoja raiz){
+    public boolean agregar(float valor, Hoja raiz){
         if (this.raiz == null){
             Hoja nuevaHoja = new Hoja(valor);
             this.raiz = nuevaHoja;
@@ -63,18 +63,18 @@ public class Arbol{
     
     /**
      * Básicamente un señuelo.
-     * @param int valor Contiene el valor que se busca.
+     * @param float valor Contiene el valor que se busca.
      */
-    public void buscar(int valor){
+    public void buscar(float valor){
         System.out.println(valor + ": "+ buscar(valor, raiz));
     }
     
     /**
      * Permite buscar una Hoja en el árbol.
-     * @param int valor Contiene el valor que se busca.
+     * @param float valor Contiene el valor que se busca.
      * @param hoja raiz Raíz del árbol.
      */
-    public boolean buscar(int valor, Hoja raiz){
+    public boolean buscar(float valor, Hoja raiz){
         if (raiz != null){
             if (valor == raiz.getValor()){
                 return true;
