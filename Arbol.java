@@ -27,69 +27,72 @@ public class Arbol{
     /**
      * Básicamente es un señuelo.
      * @param float valor Contiene el valor que se asigna a la Hoja.
+     * @param String nombre Nombre del estudiante.
      */
-    public void agregar(float valor){
-        agregar(valor, raiz);
+    public void agregar(String nombre, float valor){
+        
+        agregar(nombre, valor, raiz);
     }
     
     /**
      * Permite agregar una nueva hoja al árbol.
      * @param float valor contiene el valor que se asigna a la Hoja.
      * @param Hoja raiz Contiene el valor desde el cual se empieza a recorrer el árbol.
+     * @param String nombre Nombre del estudiante.
      */
-    public boolean agregar(float valor, Hoja raiz){
+    public boolean agregar(String nombre, float valor, Hoja raiz){
         if (this.raiz == null){
-            Hoja nuevaHoja = new Hoja(valor);
+            Hoja nuevaHoja = new Hoja(nombre, valor);
             this.raiz = nuevaHoja;
         }
         else if (valor < raiz.getValor()){
             if (raiz.getMenor() != null){
-                return agregar(valor, raiz.getMenor());
+                return agregar(nombre, valor, raiz.getMenor());
             }
-            Hoja nuevaHoja = new Hoja(valor);
+            Hoja nuevaHoja = new Hoja(nombre, valor);
             raiz.setMenor(nuevaHoja);
             return true;
         }
         else if(valor > raiz.getValor()){
             if (raiz.getMayor() != null){
-                return agregar(valor, raiz.getMayor());
+                return agregar(nombre, valor, raiz.getMayor());
             }
-            Hoja nuevaHoja = new Hoja(valor);
+            Hoja nuevaHoja = new Hoja(nombre, valor);
             raiz.setMayor(nuevaHoja);
             return true;
         }
         return false;
     }
-    
+
     /**
      * Básicamente un señuelo.
-     * @param float valor Contiene el valor que se busca.
+     * @param float valor a buscar.
      */
-    public void buscar(float valor){
-        System.out.println(valor + ": "+ buscar(valor, raiz));
+    public void menores(float valor){
+        System.out.println("Menores al promedio:");
+        if (menores(valor, raiz) == false){
+            System.out.println("No hay coincidencias.");
+        }
+        System.out.println("");
     }
     
     /**
-     * Permite buscar una Hoja en el árbol.
-     * @param float valor Contiene el valor que se busca.
-     * @param hoja raiz Raíz del árbol.
+     * Imprime los elementos menores al valor.
+     * @param float valor a buscar.
+     * @param Hoja raiz Raíz del árbol.
+     * @return boolean.
      */
-    public boolean buscar(float valor, Hoja raiz){
+    public boolean menores(float valor, Hoja raiz){
         if (raiz != null){
-            if (valor == raiz.getValor()){
+            if (raiz.getMenor() != null){
+               menores(valor, raiz.getMenor());
+            }
+            if (raiz.getValor() < valor){
+                System.out.print(raiz.getNombre() + " " + raiz.getValor() + " "); 
                 return true;
             }
-            else if (valor < raiz.getValor()){
-                if (raiz.getMenor() != null){
-                    return buscar(valor, raiz.getMenor());
-                }
-                return false;
-            }
-            else if(valor > raiz.getValor()){
-                if (raiz.getMayor() != null){
-                    return buscar(valor, raiz.getMayor());
-                }
-                return false;
+            if (raiz.getMayor() != null){
+                menores(valor, raiz.getMayor());
             }
         }
         return false;
@@ -97,76 +100,69 @@ public class Arbol{
     
     /**
      * Básicamente un señuelo.
+     * @param float valor a buscar.
      */
-    public void preOrder(){
-        System.out.println("Pre Orden:");
-        preOrder(raiz);
+    public void mayores(float valor){
+        System.out.println("Mayores al promedio:");
+        if (mayores(valor, raiz) == false){
+            System.out.println("No hay coincidencias.");
+        }
         System.out.println("");
     }
     
     /**
-     * Permite recorrer el árbol en pre-orden.
+     * Imprime los elementos mayores al valor
+     * @param float valor a buscar.
      * @param Hoja raiz Raíz del árbol.
+     * @return boolean.
      */
-    public void preOrder(Hoja raiz){
+    public boolean mayores(float valor, Hoja raiz){
         if (raiz != null){
-            System.out.print(raiz.getValor() + " ");
             if (raiz.getMenor() != null){
-                preOrder(raiz.getMenor());
+               mayores(valor, raiz.getMenor());
+            }
+            if (raiz.getValor() > valor){
+                System.out.print(raiz.getNombre() + " " + raiz.getValor() + " "); 
+                return true;
             }
             if (raiz.getMayor() != null){
-                preOrder(raiz.getMayor());
+                mayores(valor, raiz.getMayor());
             }
         }
+        return false;
     }
     
     /**
      * Básicamente un señuelo.
+     * @param float valor a buscar.
      */
-    public void inOrder(){
-        System.out.println("En Orden:");
-        inOrder(raiz);
+    public void iguales(float valor){
+        System.out.println("Iguales al promedio:");
+        if (iguales(valor, raiz) == false){
+            System.out.println("No hay coincidencias.");
+        }
         System.out.println("");
     }
     
     /**
-     * Permite recorrer el árbol en orden.
+     * Imprime los elementos iguales al valor
+     * @param float valor a buscar.
      * @param Hoja raiz Raíz del árbol.
+     * @return boolean.
      */
-    public void inOrder(Hoja raiz){
+    public boolean iguales(float valor, Hoja raiz){
         if (raiz != null){
             if (raiz.getMenor() != null){
-               inOrder(raiz.getMenor());
+               iguales(valor, raiz.getMenor());
             }
-            System.out.print(raiz.getValor() + " "); 
-            if (raiz.getMayor() != null){
-                inOrder(raiz.getMayor());
-            }
-        }
-    }
-    
-    /**
-     * Básicamente un señuelo.
-     */
-    public void postOrder(){
-        System.out.println("Post Orden:");
-        postOrder(raiz);
-        System.out.println("");
-    }
-    
-    /**
-     * Permite recorrer el árbol en post-orden.
-     * @param Hoja raiz Raíz del árbol.
-     */
-    public void postOrder(Hoja raiz){
-        if (raiz != null){
-            if (raiz.getMenor() != null){
-                postOrder(raiz.getMenor());
+            if (raiz.getValor() == valor){
+                System.out.print(raiz.getNombre() + " " + raiz.getValor() + " "); 
+                return true;
             }
             if (raiz.getMayor() != null){
-                postOrder(raiz.getMayor());
+                iguales(valor, raiz.getMayor());
             }
-            System.out.print(raiz.getValor() + " ");
         }
+        return false;
     }
 }

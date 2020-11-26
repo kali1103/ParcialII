@@ -9,6 +9,7 @@ public class Hoja
 {
     //Instancia de variables.
     private float valor;
+    private String nombre;
     private Hoja menor;
     private Hoja mayor;
 
@@ -19,6 +20,7 @@ public class Hoja
     {
         //Inicializción de variables.
         valor = 0;
+        nombre = "";
         menor = null;
         mayor = null;
     }
@@ -26,8 +28,10 @@ public class Hoja
     /**
      * Constructor con parámetros de la clase.
      * @param float valor Valor de la constante.
+     * @String nombre Contiene el nombre del estudiante.
      */
-    public Hoja(float valor){
+    public Hoja(String nombre, float valor){
+        this.nombre = nombre;
         this.valor = valor;
         menor = null;
         mayor = null;
@@ -79,5 +83,13 @@ public class Hoja
      */
     public void setMayor(Hoja mayor){
         this.mayor = mayor;
+    }
+    
+    /**
+     * Permite obtener el valor del nombre.
+     * @return String   Contiene el nombre.
+     */
+    public String getNombre(){
+        return nombre;
     }
 }
