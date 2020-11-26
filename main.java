@@ -29,5 +29,10 @@ public class main{
         beta.preOrder();
         beta.inOrder();
         beta.postOrder();
+        String c = "a";
+        String a = "b";
+        System.out.println(a.compareTo(c));
+        System.out.println(c.compareTo(a));
+        System.out.println(c.compareTo(c));
     }
 }

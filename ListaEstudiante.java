@@ -9,6 +9,7 @@ public class ListaEstudiante
 {
     //Instania de variables.
     private Estudiante inicio;
+    private int indice;
 
     /**
      * Constructor por defecto de la clase.
@@ -17,6 +18,7 @@ public class ListaEstudiante
     {
         //Inicialización de variables.
         inicio = null;
+        indice = 0;
     }
     
     /**
@@ -29,36 +31,64 @@ public class ListaEstudiante
         Estudiante alfa = new Estudiante (nombre, carnet);
         if (inicio == null){
             inicio = alfa;
+            indice ++;
         }
-        else{
-            Estudiante actual = inicio;
-            int indice = 0;
-            if (alfa.getNombre().length() <= actual.getNombre().length()){
-                indice = alfa.getNombre().length();
-                }
-            else{
-                indice = actual.getNombre().length();
-                }
-            while (actual != null){
-                for (int contador = 0; contador < indice; contador++){
-                    if (alfa.getNombre().charAt(contador) < actual.getNombre().charAt(contador)){
-                        alfa.setSiguiente(actual);
-                        inicio = alfa;
-                        return;
-                    }
-                    else if (alfa.getNombre().charAt(contador) >= actual.getNombre().charAt(contador)
-                             && actual.getSiguiente() != null){
-                        actual = actual.getSiguiente();
-                        break;
-                    }
-                    else{
-                        actual.setSiguiente(alfa);
-                        actual = null;
-                        return;
-                    }
-                }
+        else if (inicio.getSiguiente() == null){
+            if (nombre.compareTo(inicio.getNombre()) < 0){
+                alfa.setSiguiente(inicio);
+                inicio = alfa;
+                indice ++;
+            }
+            else if (nombre.compareTo(inicio.getNombre()) >= 0){
+                inicio.setSiguiente(alfa);
+                indice ++;
             }
         }
+        else{
+            Estudiante anterior = inicio;
+            Estudiante siguiente = anterior.getSiguiente(); 
+            while (siguiente != null){
+                
+                if (nombre.compareTo(anterior.getNombre()) < 0){
+                    alfa.setSiguiente(anterior);
+                    if (anterior != inicio){
+                        busquedaValor(anterior).setSiguiente(alfa);
+                    }
+                    inicio = alfa;
+                    indice ++;
+                    break;
+                }
+                else if (siguiente != null && nombre.compareTo(siguiente.getNombre()) < 0){
+                    alfa.setSiguiente(siguiente);
+                    anterior.setSiguiente(alfa);
+                    indice ++;
+                    break;
+                }
+                anterior = anterior.getSiguiente();
+                siguiente = anterior.getSiguiente();
+            }
+            if (siguiente == null){
+                anterior.setSiguiente(alfa);
+            }
+        }
+    }
+            
+    /**
+     * Permite recorrer la lista por indices y retorna el valor del indice solicitado.
+     * @param Estudiante valor    Contiene el valor a buscar.
+     * @return Estudiante   Retorna el Estudiante del indice.
+     */
+    public Estudiante busquedaValor(Estudiante valor){
+        Estudiante temporal = inicio;
+        while (temporal != null){
+            if (temporal.getSiguiente() == valor){
+                return temporal;
+            }
+            else{
+                temporal = temporal.getSiguiente();
+            }
+        }
+        return temporal;
     }
     
     /**
