@@ -83,19 +83,20 @@ public class Arbol{
      * @return boolean.
      */
     public boolean menores(float valor, Hoja raiz){
+        boolean dato = false;
         if (raiz != null){
             if (raiz.getMenor() != null){
                menores(valor, raiz.getMenor());
             }
             if (raiz.getValor() < valor){
                 System.out.print(raiz.getNombre() + " " + raiz.getValor() + " "); 
-                return true;
+                dato = true;
             }
             if (raiz.getMayor() != null){
                 menores(valor, raiz.getMayor());
             }
         }
-        return false;
+        return dato;
     }
     
     /**
@@ -117,19 +118,20 @@ public class Arbol{
      * @return boolean.
      */
     public boolean mayores(float valor, Hoja raiz){
+        boolean dato = false;
         if (raiz != null){
             if (raiz.getMenor() != null){
                mayores(valor, raiz.getMenor());
             }
             if (raiz.getValor() > valor){
                 System.out.print(raiz.getNombre() + " " + raiz.getValor() + " "); 
-                return true;
+                dato = true;
             }
             if (raiz.getMayor() != null){
                 mayores(valor, raiz.getMayor());
             }
         }
-        return false;
+        return dato;
     }
     
     /**
@@ -151,18 +153,19 @@ public class Arbol{
      * @return boolean.
      */
     public boolean iguales(float valor, Hoja raiz){
+        boolean dato = false;
         if (raiz != null){
             if (raiz.getMenor() != null){
                iguales(valor, raiz.getMenor());
             }
             if (raiz.getValor() == valor){
                 System.out.print(raiz.getNombre() + " " + raiz.getValor() + " "); 
-                return true;
+                dato = true;
             }
             if (raiz.getMayor() != null){
                 iguales(valor, raiz.getMayor());
             }
         }
-        return false;
+        return dato;
     }
 }

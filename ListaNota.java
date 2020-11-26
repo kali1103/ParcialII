@@ -66,23 +66,7 @@ public class ListaNota
         }
         return 0;
     }
-    
-    /**
-     * Permite obtener el indice de la lista de Notas.
-     * @return int dato Contiene el indice de la lista de Notas.
-     */
-    public int getIndice(){
-        return indice;
-    }
-    
-    /**
-     * Permite obtener la primera Nota de la lista.
-     * @return Nodo Contiene el valor de inicio de la lista de Notas.
-     */
-    public Nota getInicio(){
-        return inicio;
-    }
-    
+
     /**
      * Retorna de forma recursiva la lista de ecuaciones.
      * @param Nodo inicio   Contiene el primer nodo de la lista de ecuaciones.

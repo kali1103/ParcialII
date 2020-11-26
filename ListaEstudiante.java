@@ -18,7 +18,6 @@ public class ListaEstudiante
     {
         //Inicialización de variables.
         inicio = null;
-        indice = 0;
     }
     
     /**
@@ -31,17 +30,14 @@ public class ListaEstudiante
         Estudiante alfa = new Estudiante (nombre, carnet);
         if (inicio == null){
             inicio = alfa;
-            indice ++;
         }
         else if (inicio.getSiguiente() == null){
             if (nombre.compareTo(inicio.getNombre()) < 0){
                 alfa.setSiguiente(inicio);
                 inicio = alfa;
-                indice ++;
             }
             else if (nombre.compareTo(inicio.getNombre()) >= 0){
                 inicio.setSiguiente(alfa);
-                indice ++;
             }
         }
         else{
@@ -55,13 +51,11 @@ public class ListaEstudiante
                         busquedaValor(anterior).setSiguiente(alfa);
                     }
                     inicio = alfa;
-                    indice ++;
                     break;
                 }
                 else if (siguiente != null && nombre.compareTo(siguiente.getNombre()) < 0){
                     alfa.setSiguiente(siguiente);
                     anterior.setSiguiente(alfa);
-                    indice ++;
                     break;
                 }
                 anterior = anterior.getSiguiente();

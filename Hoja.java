@@ -46,14 +46,6 @@ public class Hoja
     }
     
     /**
-     * Permite establecer el valor de la Hoja.
-     * @param float valor Contiene el valor a agregar.
-     */
-    public void setValor(float valor){
-        this.valor = valor;
-    }
-    
-    /**
      * Retorna la Hoja menor.
      * @return Hoja menor   Contiene una referencia hacia la Hoja menor.
      */

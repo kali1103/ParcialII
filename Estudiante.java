@@ -63,27 +63,11 @@ public class Estudiante
     }
     
     /**
-     * Permite establecer el nombre del Estudiante.
-     * @param int carnet Contiene el carnet a agregar.
-     */
-    public void setNombre(String nombre){
-        this.nombre = nombre;
-    }
-    
-    /**
      * Retorna el carnet del Estudiante.
      * @return int  Contiene el carnet del Estudiante.
      */
     public int getCarnet(){
         return this.carnet;
-    }
-    
-    /**
-     * Permite establecer el carnet del Estudiante.
-     * @param int carnet Contiene el carnet a agregar.
-     */
-    public void setCarnet(int carnet){
-        this.carnet = carnet;
     }
     
     /**
